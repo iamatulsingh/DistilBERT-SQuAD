@@ -6,8 +6,8 @@ import math
 import collections
 from io import open
 
-from transformers.tokenization_bert import BasicTokenizer, whitespace_tokenize
-
+# from transformers.tokenization_bert import BasicTokenizer, whitespace_tokenize
+from transformers import DistilBertTokenizer
 from torch.utils.data import DataLoader, SequentialSampler, TensorDataset
 
 
@@ -307,7 +307,7 @@ def _check_is_max_context(doc_spans, cur_span_index, position):
         num_left_context = position - doc_span.start
         num_right_context = end - position
         score = min(num_left_context, num_right_context) + \
-            0.01 * doc_span.length
+                0.01 * doc_span.length
         if best_score is None or score > best_score:
             best_score = score
             best_span_index = span_index
@@ -390,11 +390,11 @@ def write_predictions(example, all_features, all_results, n_best_size,
             feature = features[pred.feature_index]
             if pred.start_index > 0:  # this is a non-null prediction
                 tok_tokens = feature.tokens[pred.start_index:(
-                    pred.end_index + 1)]
+                        pred.end_index + 1)]
                 orig_doc_start = feature.token_to_orig_map[pred.start_index]
                 orig_doc_end = feature.token_to_orig_map[pred.end_index]
                 orig_tokens = example.doc_tokens[orig_doc_start:(
-                    orig_doc_end + 1)]
+                        orig_doc_end + 1)]
                 tok_text = " ".join(tok_tokens)
 
                 # De-tokenize WordPieces that have been split off.
@@ -492,8 +492,10 @@ def get_final_text(pred_text, orig_text, do_lower_case, verbose_logging=False):
     # and `pred_text`, and check if they are the same length. If they are
     # NOT the same length, the heuristic has failed. If they are the same
     # length, we assume the characters are one-to-one aligned.
-    tokenizer = BasicTokenizer(do_lower_case=do_lower_case)
+    # tokenizer = BasicTokenizer(do_lower_case=do_lower_case)
+    tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased', do_lower_case=do_lower_case)
 
+    # tok_text = " ".join(tokenizer.tokenize(orig_text))
     tok_text = " ".join(tokenizer.tokenize(orig_text))
 
     start_position = tok_text.find(pred_text)
