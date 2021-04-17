@@ -2,17 +2,41 @@ body {
   font-family: "Open Sans", sans-serif;
   text-align: center;
   font-weight: lighter;
+  background-color: #0d1117;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cursor: pointer;
 }
 
 .main h1 {
   font-weight: lighter;
   padding: 20px;
   margin: 0 auto;
+  color: #c9d1d9;
 }
 
 .main p {
   margin: 0 auto;
   padding: 20px;
+  color: #c9d1d9;
 }
 
 .main input {
@@ -26,6 +50,8 @@ body {
   border-radius: 5px;
   margin: 0 auto;
   margin-bottom: 15px;
+  color: #c9d1d9;
+  background-color: #161b22;
 }
 
 .main textarea {
@@ -40,6 +66,8 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  color: #c9d1d9;
+  background-color: #161b22;
 }
 
 hr {
@@ -54,11 +82,12 @@ hr {
   width: 320px;
   height: 40px;
   padding: 10px;
-  background: rgba(214, 234, 248, 0.5);
-  border: 10px solid rgba(255, 255, 255);
+  background: #201d16;
+  border: 10px solid #0d1117;
   border-radius: 15px;
   margin: 0 auto;
   animation-duration: 1s;
+  color: #e39221;
 }
 
 .main #submit-btn {
@@ -73,6 +102,10 @@ hr {
   cursor: pointer;
   margin: 0 auto;
   border-radius: 5px;
+}
+
+footer div {
+  color: #c9d1d9;
 }
 
 .inputWrapper {
