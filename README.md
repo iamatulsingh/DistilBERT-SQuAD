@@ -4,8 +4,6 @@
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/oliverproud/distilbert-squad-flask?logo=Docker&logoColor=FFF)](https://hub.docker.com/repository/docker/oliverproud/distilbert-squad-flask)
 [![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fqa.oliverproud.com)](https://qa.oliverproud.com)
 
-Try the demo at [qa.oliverproud.com](https://qa.oliverproud.com)
-
 # What is DistilBERT?
 
 Thanks to the brilliant people at [Hugging Face 🤗](https://huggingface.co/) we now have DistilBERT, which stands for Distilated-BERT. DistilBERT is a small, fast, cheap and light Transformer model based on Bert architecture. It has 40% less parameters than `bert-base-uncased`, runs 60% faster while preserving 97% of BERT's performance as measured on the GLUE language understanding benchmark. DistilBERT is trained using knowledge distillation, a technique to compress a large model called the teacher into a smaller model called the student. By distillating Bert, we obtain a smaller Transformer model that bears a lot of similarities with the original BERT model while being lighter, smaller and faster to run. DistilBERT is thus an interesting option to put large-scaled trained Transformer model into production. [Transformers - Hugging Face repository](https://github.com/huggingface/transformers)
@@ -81,11 +79,11 @@ pip3 install -r requirements.txt
 
 ### Contact
 
-If you have any questions, feedback or problems of any kind, get in touch by messaging me on [Twitter - @oliverwproud](https://twitter.com/oliverwproud) or by submitting an issue.
+If you have any questions, feedback or problems of any kind, get in touch by messaging me on [Twitter - @devatulsingh](https://twitter.com/devatulsingh) or by submitting an issue.
 
 ### SQuAD Fine-tuned model
 
-The SQuAD fine-tuned model is available in my [S3 Bucket](https://distilbert-finetuned-model.s3.eu-west-2.amazonaws.com/pytorch_model.bin) or alternatively inside the model.py file you can specify the type of model you wish to use, the one I have provided, or a Hugging Face fine-tuned SQuAD model
+The SQuAD fine-tuned model is available in s3 [S3 Bucket](https://distilbert-finetuned-model.s3.eu-west-2.amazonaws.com/pytorch_model.bin) or alternatively inside the model.py file you can specify the type of model you wish to use, the one I have provided, or a Hugging Face fine-tuned SQuAD model
 
 `distilbert-base-uncased-distilled-squad`.
 
@@ -101,9 +99,7 @@ You can test the model using `test.py` or using the provided Flask interface.
 
 ![alt text](images/carbon.png)
 
-If you would like to try out the demo then head to [qa.oliverproud.com](https://qa.oliverproud.com)
-
-![alt text](images/demo.png)
+![alt text](images/demo.gif)
 
 # How to train (Distil)BERT
 
